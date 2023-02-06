@@ -4,6 +4,10 @@ from .forms import BookCreate
 from django.http import HttpResponse
 
 #DataFlair
+
+def hello(request):
+    return HttpResponse('Hello World')
+
 def index(request):
     shelf = Book.objects.all()
     return render(request, 'book/library.html', {'shelf': shelf})
